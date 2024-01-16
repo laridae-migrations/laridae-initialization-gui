@@ -1,0 +1,18 @@
+.main {
+  background: linear-gradient(to right, #284389, #638ffd);
+}
+
+#laridae-logo {
+  width: 250px;
+}
+
+.input-card {
+  border-bottom-left-radius: 10% 50%;
+  border-top-left-radius: 10% 50%;
+  background-color: #f8f9fa ;
+}
+
+.input-custom {
+  background-color: white ;
+}
+

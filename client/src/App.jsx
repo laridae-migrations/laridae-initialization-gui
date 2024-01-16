@@ -1,10 +1,8 @@
-import React from 'react'
+import "./App.css"
+import MainBox from "./components/MainBox"
 
-function App() {
+export default function App() {
   return (
-    <div>
-    </div>
+    <MainBox />
   )
 }
-
-export default App
