@@ -1,4 +1,4 @@
-import { Button, CardContent, Typography, Grid, FormControl, Tooltip, IconButton} from '@mui/material'
+import { Button, CardContent, Typography, Grid, FormControl, Tooltip, IconButton, Box} from '@mui/material'
 import HelpIcon from '@mui/icons-material/Help'
 import AwsInfoForm from './AwsInfoForm'
 import GithubInfoForm from './GithubInfoForm'
@@ -21,14 +21,16 @@ export default function InputForm() {
   const tooltipTextAws = `Example input: \t\n ${JSON.stringify(exampleJSON, null, '\t\n')}`
   const tooltipTextGithub = `Secrets will be stored at '"https://api.github.com/repos/$REPO_NAME/actions/secrets/$SECRET_NAME"' `
 
-  const [currentForm, setCurrentForm] = React.useState("github")
+  const [currentForm, setCurrentForm] = React.useState("aws")
 
   return (
     <CardContent>
       <Grid container>
-        <Typography variant="h5" style={{ color: '#495057'}}>
-          {currentForm == 'aws' ? 'Existing AWS Infrastructure' : 'GitHub Information'}
-        </Typography>
+        <Box sx={{ m: 1 }}>
+          <Typography variant="h5" style={{ color: '#495057'}}>
+            {currentForm == 'aws' ? 'Your AWS info' : 'Your GitHub Info'}
+          </Typography>
+        </Box>
         
         <Tooltip title={currentForm == 'aws' ? tooltipTextAws : tooltipTextGithub} arrow>
           <IconButton >
@@ -42,14 +44,17 @@ export default function InputForm() {
             
           </FormControl>
 
-          <div className="buttons">
-            <Button variant="contained" 
+          {/* <div className="buttons">
+            {/* <Button variant="contained" 
                     style={{ backgroundColor: '#EB6D46', margin: '10px', width: '150px' }}
                     disabled={false}>Back</Button>
             <Button variant="contained" 
                     style={{ backgroundColor: '#EB6D46', margin: '10px', width: '150px' }}
-                    disabled={false}>Next</Button>
-          </div>
+                    disabled={false}>Next</Button> */}
+            {/* <Button variant="contained" 
+                    style={{ backgroundColor: '#EB6D46', margin: '10px'}}
+                    disabled={false}>Provision AWS Infrastructures</Button> */}
+          {/* </div> */}
 
         </form>
       </Grid>
